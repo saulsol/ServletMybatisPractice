@@ -12,16 +12,16 @@
   <title>게시물 작성</title>
 </head>
 <body>
-<h1>게시물 작성 폼</h1>
-<form action="/submit" method="post">
+<h3>게시물 작성 폼</h3>
+<form action="createPost.do" method="post">
   <label for="title">제목:</label>
-  <input type="text" id="title" name="title" required><br><br>
+  <input type="text" id="title" name="postTitle" required><br><br>
 
   <label for="content">내용:</label><br>
-  <textarea id="content" name="content" rows="4" cols="50" required></textarea><br><br>
+  <textarea id="content" name="postContent" rows="4" cols="50" required></textarea><br><br>
 
-  <label for="author">작성자:</label>
-  <input type="text" id="author" name="author" required><br><br>
+  작성자:<%=session.getAttribute("loginSuccess")%> <br>
+
 
   <input type="submit" value="작성">
 </form>

@@ -1,4 +1,4 @@
-<%--
+<%@ page import="com.dev.controller.HttpUtil" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2023-08-22
@@ -24,7 +24,7 @@
 
     <a href="userLogout.do">로그아웃</a> <br>
 
-    <a href="userLogout.do">게시물 작성</a>
+    <a href="createPost.jsp">게시물 작성</a>
 
   </body>
 </html>

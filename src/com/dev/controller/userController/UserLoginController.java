@@ -40,6 +40,8 @@ public class UserLoginController implements Controller {
             HttpSession session = request.getSession();
             session.setAttribute("loginSuccess", userId);
             System.out.println("로그인 성공!");
+            String value = (String) session.getAttribute("loginSuccess");
+            System.out.println("로그인한 유저의 ID : " + userId);
             response.sendRedirect(ctx+ "/result/postListOutput.jsp");
 
 

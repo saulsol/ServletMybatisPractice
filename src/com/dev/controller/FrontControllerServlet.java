@@ -31,7 +31,7 @@ public class FrontControllerServlet extends HttpServlet {
         list.put("/userLogout.do", new UserLogoutController());
 
         // 게시물 컨트롤러
-        list.put("/createPostController", new CreatePostController());
+        list.put("/createPost.do", new CreatePostController());
 
 
     }
