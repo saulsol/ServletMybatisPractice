@@ -5,5 +5,13 @@
 
 <mapper namespace="mybatis.MemberMapper.post">
 
+    <insert id="postInsert" parameterType="CreatePostDto">
+
+        INSERT INTO Posts(postTitle, postContent, userId)
+        VALUES(#{postTitle}, #{postContent}, #{userId})
+
+    </insert>
+
+
 
 </mapper>

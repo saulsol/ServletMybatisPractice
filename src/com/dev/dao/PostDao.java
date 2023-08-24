@@ -1,8 +1,6 @@
 package com.dev.dao;
 
-
-import com.dev.dto.UserDto;
-import com.dev.dto.UserLoginDto;
+import com.dev.dto.CreatePostDto;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -11,10 +9,11 @@ import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 import java.io.IOException;
 import java.io.InputStream;
 
-public class UserDao {
+public class PostDao {
 
-    private static UserDao userDao;
+    private static PostDao postDao;
     private static final SqlSessionFactory sqlSessionFactory;
+
 
     static {
         InputStream inputStream;
@@ -30,9 +29,10 @@ public class UserDao {
 
     }
 
-    public int userInsert(UserDto userDto){
+    public int postInsert(CreatePostDto createPostDto){
         SqlSession session = sqlSessionFactory.openSession();
-        int cnt = session.insert("userInsert", userDto);
+        int cnt = session.insert("postInsert", createPostDto);
+
         session.commit();
         session.close();
 
@@ -40,30 +40,21 @@ public class UserDao {
     }
 
 
-    public String findByUserIdAndUserPass(UserLoginDto loginDto){
-
-         SqlSession session = sqlSessionFactory.openSession();
-
-         String userId = session.selectOne("findByUserIdAndUserPass", loginDto);
-
-        session.commit();
-        session.close();
-
-
-        return userId;
-    }
 
 
 
 
 
-    static public UserDao getInstance(){
-        if(userDao == null){
-            userDao = new UserDao();
-            return userDao;
+
+
+    static public PostDao getInstance(){
+        if(postDao == null){
+            postDao = new PostDao();
+            return postDao;
         }
 
-            return userDao;
+        return postDao;
     }
+
 
 }

@@ -36,7 +36,7 @@ public class UserInsertController implements Controller {
         if(cnt > 0){
             response.sendRedirect(ctx+ "/result/memberListOutput.jsp");
         }else{
-            throw new ServletException("not insert");
+            throw new ServletException("NOT INSERT");
         }
 
 

@@ -20,7 +20,7 @@
   <label for="content">내용:</label><br>
   <textarea id="content" name="postContent" rows="4" cols="50" required></textarea><br><br>
 
-  작성자:<%=session.getAttribute("loginSuccess")%>
+  작성자:<%=session.getAttribute("loginSuccess")%> <br>
 
 
   <input type="submit" value="작성">

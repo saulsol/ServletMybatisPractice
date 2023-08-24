@@ -8,6 +8,8 @@
     <typeAliases>
         <typeAlias type="com.dev.dto.UserDto" alias="UserDto"/>
         <typeAlias type="com.dev.dto.UserLoginDto" alias="UserLoginDto"/>
+        <typeAlias type="com.dev.dto.CreatePostDto" alias="CreatePostDto"/>
+        <typeAlias type="com.dev.dto.PostDto" alias="PostDto"/>
     </typeAliases>
 
 

@@ -3,15 +3,15 @@ package com.dev.dto;
 public class PostDto {
 
     private Long postNum;
-    private Long userNum;
+    private String userId;
     private String postTitle;
     private String postContent;
 
     public PostDto(){}
 
-    public PostDto(Long postNum, Long userNum, String postTitle, String postContent) {
+    public PostDto(Long postNum, String userId, String postTitle, String postContent) {
         this.postNum = postNum;
-        this.userNum = userNum;
+        this.userId = userId;
         this.postTitle = postTitle;
         this.postContent = postContent;
     }
@@ -20,8 +20,8 @@ public class PostDto {
         return postNum;
     }
 
-    public Long getUserNum() {
-        return userNum;
+    public String getUserId() {
+        return userId;
     }
 
     public String getPostTitle() {
@@ -36,8 +36,8 @@ public class PostDto {
         this.postNum = postNum;
     }
 
-    public void setUserNum(Long userNum) {
-        this.userNum = userNum;
+    public void setUserNum(String userId) {
+        this.userId = userId;
     }
 
     public void setPostTitle(String postTitle) {
