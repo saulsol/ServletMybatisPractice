@@ -22,8 +22,9 @@
 
     </form>
 
-    <a href="userLogout.do">로그아웃</a>
+    <a href="userLogout.do">로그아웃</a> <br>
 
+    <a href="userLogout.do">게시물 작성</a>
 
   </body>
 </html>

@@ -24,6 +24,5 @@
 
     <a href="userLogout.do">로그아웃</a>
 
-
   </body>
 </html>

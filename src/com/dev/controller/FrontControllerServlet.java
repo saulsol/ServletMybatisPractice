@@ -1,5 +1,6 @@
 package com.dev.controller;
 
+import com.dev.controller.postController.CreatePostController;
 import com.dev.controller.userController.*;
 
 import javax.servlet.*;
@@ -18,6 +19,9 @@ public class FrontControllerServlet extends HttpServlet {
     public void init(ServletConfig servletConfig) throws ServletException {
         charSet = servletConfig.getInitParameter("charset");
         list = new HashMap<String, Controller>();
+
+        // 유저 컨트롤러
+
         list.put("/userInsert.do", new UserInsertController());
         list.put("/userSearch.do", new UserSearchController());
         list.put("/userUpdate.do", new UserUpdateController());
@@ -25,6 +29,10 @@ public class FrontControllerServlet extends HttpServlet {
         list.put("/userList.do", new UserListController());
         list.put("/userLogin.do", new UserLoginController());
         list.put("/userLogout.do", new UserLogoutController());
+
+        // 게시물 컨트롤러
+        list.put("/createPostController", new CreatePostController());
+
 
     }
 

@@ -25,6 +25,7 @@
     </environments>
     <mappers>
         <mapper resource="com/dev/myBatis/UserMapper.xml"/>
+        <mapper resource="com/dev/myBatis/PostMapper.xml"/>
     </mappers>
 
 </configuration>
