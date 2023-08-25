@@ -15,11 +15,21 @@
     </tr>
 
     <c:forEach var="postDto" items="${requestScope.list}">
+        <tr>
         <td>${postDto.postNum}</td>
         <td>${postDto.postTitle}</td>
         <td>${postDto.userId}</td>
+        </tr>
     </c:forEach>
+
+    <c:forEach var="cnt" begin="1" end="${requestScope.pageSize}" step="1">
+        <button>${cnt}</button>
+    </c:forEach>
+
 </table>
+
+<br>
+
 
 
 
