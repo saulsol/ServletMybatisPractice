@@ -1,14 +1,13 @@
 package com.dev.dto;
 
-public class DisLikesDto {
-
+public class FindDisLikesDto {
+    
     private String userId;
     private int postNum;
 
-    DisLikesDto(){}
-    public DisLikesDto(String userId, int postId) {
+    public FindDisLikesDto(String userId, int postNum) {
         this.userId = userId;
-        this.postNum = postId;
+        this.postNum = postNum;
     }
 
     public String getUserId() {

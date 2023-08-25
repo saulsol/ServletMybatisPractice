@@ -2,39 +2,28 @@ package com.dev.dto;
 
 public class LikesDto {
 
-    private Long likesNum;
-    private Long userNum;
-    private Long postMum;
+    private String userId;
+    private int postNum;
 
-    public LikesDto(){}
-
-    public LikesDto(Long likesNum, Long userNum, Long postMum) {
-        this.likesNum = likesNum;
-        this.userNum = userNum;
-        this.postMum = postMum;
+    LikesDto(){}
+    public LikesDto(String userId, int postId) {
+        this.userId = userId;
+        this.postNum = postId;
     }
 
-    public Long getLikesNum() {
-        return likesNum;
+    public String getUserId() {
+        return userId;
     }
 
-    public Long getUserNum() {
-        return userNum;
+    public int getPostNum() {
+        return postNum;
     }
 
-    public Long getPostMum() {
-        return postMum;
+    public void setUserId(String userId) {
+        this.userId = userId;
     }
 
-    public void setLikesNum(Long likesNum) {
-        this.likesNum = likesNum;
-    }
-
-    public void setUserNum(Long userNum) {
-        this.userNum = userNum;
-    }
-
-    public void setPostMum(Long postMum) {
-        this.postMum = postMum;
+    public void setPostNum(int postNum) {
+        this.postNum = postNum;
     }
 }

@@ -12,6 +12,7 @@
             location.href="${ctx}/postList.do?pageNum="+num;
         }
 
+
     </script>
 
 
@@ -28,7 +29,7 @@
     <c:forEach var="postDto" items="${requestScope.list}">
         <tr>
         <td>${postDto.postNum}</td>
-        <td>${postDto.postTitle}</td>
+        <td><a href="postContent.do?postNum=${postDto.postNum}">${postDto.postTitle}</a></td>
         <td>${postDto.userId}</td>
         </tr>
     </c:forEach>

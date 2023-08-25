@@ -1,8 +1,7 @@
 package com.dev.dao;
 
 import com.dev.controller.util.PageInfo;
-import com.dev.dto.CreatePostDto;
-import com.dev.dto.PostDto;
+import com.dev.dto.*;
 import org.apache.ibatis.io.Resources;
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -71,6 +70,88 @@ public class PostDao {
         return list;
     }
 
+
+
+
+
+
+
+    public PostDto findById(int postNum){
+        SqlSession session = sqlSessionFactory.openSession();
+        PostDto postDto = session.selectOne("findById", postNum);
+
+        session.commit();
+        session.close();
+
+        return postDto;
+    }
+
+    // 이미 좋아요를 눌렀을 때 1이 나오고
+    // 없으면 0이 나온다.
+    public int isAlreadyLikes(String userId, int postNum){
+        FindLikesDto likesDto = new FindLikesDto(userId, postNum);
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int check = session.selectOne("isAlreadyLikes",likesDto);
+
+        session.commit();
+        session.close();
+
+
+        return check;
+    }
+
+    public int isAlreadyDisLikes(String userId, int postNum){
+        FindLikesDto likesDto = new FindLikesDto(userId, postNum);
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int check = session.selectOne("isAlreadyDisLikes",likesDto);
+
+        session.commit();
+        session.close();
+
+        return check;
+    }
+
+    public int countPostLikes(int postNum){
+
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int likesCount = session.selectOne("countPostLikes", postNum);
+
+        session.commit();
+        session.close();
+
+        return likesCount;
+    }
+
+    public int countPostDisLikes(int postNum){
+
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int likesCount = session.selectOne("countPostDisLikes", postNum);
+
+        session.commit();
+        session.close();
+
+        return likesCount;
+    }
+
+    public void insertLikes(LikesDto likesDto){
+        SqlSession session = sqlSessionFactory.openSession();
+
+        session.insert("insertLikes",likesDto);
+
+        session.commit();
+        session.close();
+    }
+
+    public void insertDisLikes(DisLikesDto disLikesDto){
+        SqlSession session = sqlSessionFactory.openSession();
+        session.insert("insertDisLikes", disLikesDto);
+        session.commit();
+        session.close();
+    }
 
 
 

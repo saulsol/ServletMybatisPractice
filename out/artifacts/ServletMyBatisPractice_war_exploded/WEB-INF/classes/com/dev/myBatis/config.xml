@@ -11,6 +11,10 @@
         <typeAlias type="com.dev.dto.CreatePostDto" alias="CreatePostDto"/>
         <typeAlias type="com.dev.dto.PostDto" alias="PostDto"/>
         <typeAlias type="com.dev.controller.util.PageInfo" alias="PageInfo"/>
+        <typeAlias type="com.dev.dto.FindLikesDto" alias="FindLikesDto"/>
+        <typeAlias type="com.dev.dto.FindDisLikesDto" alias="FindDisLikesDto"/>
+        <typeAlias type="com.dev.dto.LikesDto" alias="LikesDto"/>
+        <typeAlias type="com.dev.dto.DisLikesDto" alias="DisLikesDto"/>
     </typeAliases>
 
 

@@ -22,7 +22,41 @@
         LIMIT #{limit} OFFSET #{offset}
 
     </select>
+    
+    <insert id="insertLikes" parameterType="LikesDto">
+        INSERT INTO Likes(userId, postNum) VALUES(#{userId}, #{postNum})
+    </insert>
 
+    <insert id="insertDisLikes" parameterType="DisLikesDto">
+        INSERT INTO DisLikes(userId, postNum) VALUES(#{userId}, #{postNum})
+    </insert>
+    
+    
 
+    <select id="findById" resultType="PostDto" parameterType="Integer">
+        SELECT * FROM Posts
+        WHERE postNum = #{postNum}
+    </select>
 
+    <select id="isAlreadyLikes" resultType="Integer" parameterType="FindLikesDto">
+
+        SELECT COUNT(*) FROM Likes WHERE #{userId} AND #{postNum}
+
+    </select>
+
+    <select id="isAlreadyDisLikes" resultType="Integer" parameterType="FindLikesDto">
+
+        SELECT COUNT(*) FROM DisLikes WHERE #{userId} AND #{postNum}
+
+    </select>
+
+    <select id="countPostLikes" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM Likes WHERE postNum = #{postNum}
+    </select>
+
+    <select id="countPostDisLikes" parameterType="Integer" resultType="Integer">
+        SELECT COUNT(*) FROM DisLikes WHERE postNum = #{postNum}
+    </select>
+
+    
 </mapper>

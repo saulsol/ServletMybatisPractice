@@ -1,7 +1,6 @@
 package com.dev.controller;
 
-import com.dev.controller.postController.CreatePostController;
-import com.dev.controller.postController.PostListController;
+import com.dev.controller.postController.*;
 import com.dev.controller.userController.*;
 
 import javax.servlet.*;
@@ -33,7 +32,9 @@ public class FrontControllerServlet extends HttpServlet {
         // 게시물 컨트롤러
         list.put("/createPost.do", new CreatePostController());
         list.put("/postList.do", new PostListController());
-
+        list.put("/postContent.do", new PostContentController());
+        list.put("/postLike.do", new PostLikesInsertController());
+        list.put("/postDisLike.do", new PostDisLikesInsertController());
 
     }
 
