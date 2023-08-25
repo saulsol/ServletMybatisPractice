@@ -34,7 +34,7 @@ public class UserInsertController implements Controller {
         String ctx = request.getContextPath();
 
         if(cnt > 0){
-            response.sendRedirect(ctx+ "/result/memberListOutput.jsp");
+            response.sendRedirect(ctx+ "/memberList.do");
         }else{
             throw new ServletException("NOT INSERT");
         }

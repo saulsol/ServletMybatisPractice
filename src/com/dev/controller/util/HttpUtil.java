@@ -1,4 +1,4 @@
-package com.dev.controller;
+package com.dev.controller.util;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.http.HttpServletRequest;

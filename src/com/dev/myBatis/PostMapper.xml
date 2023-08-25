@@ -12,6 +12,17 @@
 
     </insert>
 
+    <select id="getTotalPostCount" resultType="Integer">
+        SELECT COUNT(*) FROM Posts
+    </select>
+
+    <select id="getPostByPage" resultType="PostDto" parameterType="PageInfo">
+        SELECT * FROM Posts
+        ORDER BY postNum
+        LIMIT #{limit} OFFSET #{offset}
+
+    </select>
+
 
 
 </mapper>

@@ -4,6 +4,7 @@ import com.dev.controller.Controller;
 import com.dev.dao.PostDao;
 import com.dev.dto.CreatePostDto;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -24,15 +25,17 @@ public class CreatePostController implements Controller {
         if(userId.isEmpty()){
             request.setAttribute("error", "로그인을 먼저 해주시기 바랍니다.");
         }
-        String ctx = request.getContextPath();
+
 
         CreatePostDto createPostDto = new CreatePostDto(postTitle, postContent, userId);
         PostDao postDao = PostDao.getInstance();
-
         int cnt = postDao.postInsert(createPostDto);
 
+        request.setAttribute("list", postDao.getPostByPage(1));
+
         if(cnt > 0){
-            response.sendRedirect(ctx + "/result/postListOutput.jsp");
+            RequestDispatcher requestDispatcher = request.getRequestDispatcher("/result/postListOutput.jsp");
+            requestDispatcher.forward(request, response);
         }else{
             throw new ServletException("NOT INSERT");
         }

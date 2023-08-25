@@ -1,4 +1,4 @@
-<%@ page import="com.dev.controller.HttpUtil" %><%--
+<%@ page import="com.dev.controller.util.HttpUtil" %><%--
   Created by IntelliJ IDEA.
   User: PC
   Date: 2023-08-22

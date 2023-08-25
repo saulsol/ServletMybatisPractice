@@ -10,6 +10,7 @@
         <typeAlias type="com.dev.dto.UserLoginDto" alias="UserLoginDto"/>
         <typeAlias type="com.dev.dto.CreatePostDto" alias="CreatePostDto"/>
         <typeAlias type="com.dev.dto.PostDto" alias="PostDto"/>
+        <typeAlias type="com.dev.controller.util.PageInfo" alias="PageInfo"/>
     </typeAliases>
 
 

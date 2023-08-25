@@ -1,10 +1,11 @@
 package com.dev.controller.userController;
 
 import com.dev.controller.Controller;
-import com.dev.controller.HttpUtil;
+import com.dev.controller.util.HttpUtil;
 import com.dev.dao.UserDao;
 import com.dev.dto.UserLoginDto;
 
+import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -41,8 +42,10 @@ public class UserLoginController implements Controller {
             session.setAttribute("loginSuccess", userId);
             System.out.println("로그인 성공!");
             String value = (String) session.getAttribute("loginSuccess");
-            System.out.println("로그인한 유저의 ID : " + userId);
-            response.sendRedirect(ctx+ "/result/postListOutput.jsp");
+            System.out.println("로그인한 유저의 ID : " + value);
+
+            response.sendRedirect(ctx+"/postList.do");
+
 
 
         }
