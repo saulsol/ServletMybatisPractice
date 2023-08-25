@@ -1,10 +1,21 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
 <head>
     <title>Title</title>
+
+    <script>
+        function renderPostPage(num){
+            location.href="${ctx}/postList.do?pageNum="+num;
+        }
+
+    </script>
+
+
+
 </head>
 <body>
 <table class="table table-bordered">
@@ -23,7 +34,7 @@
     </c:forEach>
 
     <c:forEach var="cnt" begin="1" end="${requestScope.pageSize}" step="1">
-        <button>${cnt}</button>
+        <button onclick="renderPostPage(${cnt})"> ${cnt}</button>
     </c:forEach>
 
 </table>
