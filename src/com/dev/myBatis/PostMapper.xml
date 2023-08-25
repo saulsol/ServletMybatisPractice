@@ -40,13 +40,13 @@
 
     <select id="isAlreadyLikes" resultType="Integer" parameterType="FindLikesDto">
 
-        SELECT COUNT(*) FROM Likes WHERE #{userId} AND #{postNum}
+        SELECT COUNT(*) FROM Likes WHERE userId = #{userId} AND postNum= #{postNum}
 
     </select>
 
     <select id="isAlreadyDisLikes" resultType="Integer" parameterType="FindLikesDto">
 
-        SELECT COUNT(*) FROM DisLikes WHERE #{userId} AND #{postNum}
+        SELECT COUNT(*) FROM DisLikes WHERE userId = #{userId} AND postNum = #{postNum}
 
     </select>
 

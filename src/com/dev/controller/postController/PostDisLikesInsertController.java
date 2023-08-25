@@ -26,8 +26,8 @@ public class PostDisLikesInsertController implements Controller {
 
 
 
-        if(postDao.isAlreadyDisLikes(userId,postNum) == 1){
-            request.setAttribute("isAlreadyDisLikes", true);
+        if(postDao.isAlreadyDisLikes(userId,postNum) >=1){
+            request.setAttribute("isAlreadyDisLikes", "yes");
         }else {
             postDao.insertDisLikes(new DisLikesDto(userId, postNum));
         }

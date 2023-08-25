@@ -24,8 +24,8 @@ public class PostLikesInsertController implements Controller {
 
         int postNum = Integer.parseInt(request.getParameter("postNum"));
 
-        if(postDao.isAlreadyLikes(userId,postNum) == 1){
-            request.setAttribute("isAlreadyLikes", true);
+        if(postDao.isAlreadyLikes(userId,postNum) >= 1){
+            request.setAttribute("isAlreadyLikes", "yes");
         }else {
             postDao.insertLikes(new LikesDto(userId, postNum));
         }

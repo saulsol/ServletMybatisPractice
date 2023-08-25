@@ -8,25 +8,28 @@
     <title>Title</title>
 
     <script>
+
         function postLike(postNum){
-
-
 
             location.href="${ctx}/postLike.do?postNum="+postNum;
         }
 
         function postDisLike(postNum){
 
-
             location.href="${ctx}/postDisLike.do?postNum="+postNum;
         }
+
+
+
+
+
+
 
     </script>
 
 
 </head>
 <body>
-
 
         <h3>게시물 제목 : ${requestScope.postDto.postTitle}</h3>
 
