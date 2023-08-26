@@ -36,6 +36,9 @@ public class FrontControllerServlet extends HttpServlet {
         list.put("/postLike.do", new PostLikesInsertController());
         list.put("/postDisLike.do", new PostDisLikesInsertController());
 
+        // 게시물 검색 컨트롤러
+        list.put("/postSearchController.do", new postSearchController());
+
     }
 
     @Override

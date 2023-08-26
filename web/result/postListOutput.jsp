@@ -12,6 +12,10 @@
             location.href="${ctx}/postList.do?pageNum="+num;
         }
 
+        function createPost(){
+            location.href="${ctx}/createPost.jsp"
+        }
+
 
     </script>
 
@@ -37,6 +41,11 @@
     <c:forEach var="cnt" begin="1" end="${requestScope.pageSize}" step="1">
         <button onclick="renderPostPage(${cnt})"> ${cnt}</button>
     </c:forEach>
+
+    <br>
+
+    <button onclick="createPost()">게시물 작성하기</button>
+
 
 </table>
 

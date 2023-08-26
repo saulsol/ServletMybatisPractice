@@ -19,9 +19,9 @@
             location.href="${ctx}/postDisLike.do?postNum="+postNum;
         }
 
-
-
-
+        function goToPostList(){
+            location.href="${ctx}/postList.do"
+        }
 
 
 
@@ -41,8 +41,31 @@
             </textarea>
         </label>
 
+        <c:if test="${not empty sessionScope.duplicateLikes}">
+
+            <script>
+                alert("${sessionScope.duplicateLikes}")
+            </script>
+
+        </c:if>
+
+        <c:if test="${not empty sessionScope.duplicateDisLikes}">
+
+            <script>
+                alert("${sessionScope.duplicateDisLikes}")
+            </script>
+
+        </c:if>
+
+
+
+
+
         <button onclick="postLike(${requestScope.postDto.postNum})">좋아요 + ${requestScope.likesCount}</button>
-        <button onclick="postDisLike(${requestScope.postDto.postNum})">싫어요 + ${requestScope.disLikesCount}</button>
+        <button onclick="postDisLike(${requestScope.postDto.postNum})">싫어요 - ${requestScope.disLikesCount}</button>
+
+        <br>
+        <button onclick="goToPostList()">게시물 목록으로 가기</button>
 
 
 </body>

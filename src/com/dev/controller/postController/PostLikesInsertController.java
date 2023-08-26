@@ -25,7 +25,9 @@ public class PostLikesInsertController implements Controller {
         int postNum = Integer.parseInt(request.getParameter("postNum"));
 
         if(postDao.isAlreadyLikes(userId,postNum) >= 1){
-            request.setAttribute("isAlreadyLikes", "yes");
+
+            session.setAttribute("duplicateLikes", "이미 좋아요를 누른 게시글입니다");
+
         }else {
             postDao.insertLikes(new LikesDto(userId, postNum));
         }

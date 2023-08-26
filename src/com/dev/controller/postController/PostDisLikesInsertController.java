@@ -27,7 +27,7 @@ public class PostDisLikesInsertController implements Controller {
 
 
         if(postDao.isAlreadyDisLikes(userId,postNum) >=1){
-            request.setAttribute("isAlreadyDisLikes", "yes");
+            session.setAttribute("duplicateDisLikes", "이미 싫어요를 누른 게시글입니다");
         }else {
             postDao.insertDisLikes(new DisLikesDto(userId, postNum));
         }

@@ -1,14 +1,25 @@
-<%@ page import="com.dev.controller.util.HttpUtil" %><%--
-  Created by IntelliJ IDEA.
-  User: PC
-  Date: 2023-08-22
-  Time: 오후 8:36
-  To change this template use File | Settings | File Templates.
---%>
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<script src='https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
+<c:set var="ctx" value="${pageContext.request.contextPath}"/>
 <html>
   <head>
     <title>$Title$</title>
+
+    <script>
+      function logout(){
+        location.href="${ctx}/userLogout.do"
+      }
+
+      function createPost(){
+        location.href="${ctx}/createPost.jsp"
+      }
+
+
+    </script>
+
+
   </head>
   <body>
     <h3>로그인 페이지</h3>
@@ -22,9 +33,11 @@
 
     </form>
 
-    <a href="userLogout.do">로그아웃</a> <br>
+    <button onclick="logout()">로그아웃</button>
 
-    <a href="createPost.jsp">게시물 작성</a>
+    <button onclick="createPost()">게시물 작성</button>
+
+
 
   </body>
 </html>
