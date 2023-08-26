@@ -39,6 +39,7 @@ public class FrontControllerServlet extends HttpServlet {
         // 게시물 검색 컨트롤러
         list.put("/postSearchController.do", new postSearchController());
 
+
     }
 
     @Override

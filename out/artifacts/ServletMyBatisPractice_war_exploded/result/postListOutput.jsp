@@ -9,6 +9,7 @@
 
     <script>
         function renderPostPage(num){
+
             location.href="${ctx}/postList.do?pageNum="+num;
         }
 
@@ -23,6 +24,20 @@
 
 </head>
 <body>
+
+
+<form action="${ctx}/postSearchController.do" method="post">
+    게시물 검색 :
+    <input type="text" name="search">
+</form>
+
+<c:if test="${not empty requestScope.searching}">
+
+    <h3>${requestScope.searching} 의 검색 결과입니다</h3>
+
+</c:if>
+
+
 <table class="table table-bordered">
     <tr>
         <td>게시물 번호</td>

@@ -58,5 +58,16 @@
         SELECT COUNT(*) FROM DisLikes WHERE postNum = #{postNum}
     </select>
 
+    <select id="postSearch" parameterType="SearchPostDto" resultType="postDto">
+        SELECT * FROM Posts  WHERE (postTitle LIKE CONCAT('%', #{postTitle}, '%')
+        OR postContent LIKE CONCAT('%', #{postContent}, '%'))
+        ORDER BY postNum
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <select id="postSearchCount" parameterType="PostSearchCountDto" resultType="Integer">
+        SELECT COUNT(*) FROM Posts  WHERE (postTitle LIKE CONCAT('%', #{postTitle}, '%')
+        OR postContent LIKE CONCAT('%', #{postContent}, '%'))
+    </select>
     
 </mapper>

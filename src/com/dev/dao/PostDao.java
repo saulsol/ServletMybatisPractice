@@ -153,6 +153,39 @@ public class PostDao {
         session.close();
     }
 
+    public List<PostDto> postSearch(int pageNum, String postTitle, String postContent){
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int initSize = 10;
+        int realPAgeNum = pageNum -1;
+
+        SearchPostDto searchPostDto = new SearchPostDto();
+        searchPostDto.setLimit(initSize);
+        searchPostDto.setOffset(realPAgeNum * 10);
+        searchPostDto.setPostTitle(postTitle);
+        searchPostDto.setPostContent(postContent);
+
+        List<PostDto> searchList = session.selectList("postSearch", searchPostDto);
+
+        session.commit();
+        session.close();
+
+        return searchList;
+    }
+
+    public int postSearchCount(PostSearchCountDto postSearchCountDto){
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int count = session.selectOne("postSearchCount", postSearchCountDto);
+
+        session.commit();
+        session.close();
+
+        return count;
+    }
+
+
+
 
 
 
