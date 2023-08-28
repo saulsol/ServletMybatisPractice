@@ -16,9 +16,7 @@
         location.href="${ctx}/createPost.jsp"
       }
 
-      function likesPost(){
-        location.href="${ctx}/userLikesPost.do"
-      }
+
 
 
     </script>
@@ -41,7 +39,6 @@
 
     <button onclick="createPost()">게시물 작성</button>
 
-    <button>회원이 좋아요 누른 글 목록</button>
 
 
   </body>

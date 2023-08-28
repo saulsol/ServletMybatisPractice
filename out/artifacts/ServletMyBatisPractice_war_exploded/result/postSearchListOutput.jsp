@@ -16,6 +16,7 @@
         }
 
 
+
     </script>
 
 
@@ -47,6 +48,8 @@
     <br>
 
     <button onclick="createPost()">게시물 작성하기</button>
+
+
 
 
 </table>

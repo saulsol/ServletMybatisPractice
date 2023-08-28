@@ -17,6 +17,7 @@
         <typeAlias type="com.dev.dto.DisLikesDto" alias="DisLikesDto"/>
         <typeAlias type="com.dev.dto.SearchPostDto" alias="SearchPostDto"/>
         <typeAlias type="com.dev.dto.PostSearchCountDto" alias="PostSearchCountDto"/>
+        <typeAlias type="com.dev.dto.UserLikesPostDto" alias="UserLikesPostDto"/>
     </typeAliases>
 
 

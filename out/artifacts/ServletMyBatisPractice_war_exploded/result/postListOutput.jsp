@@ -17,6 +17,11 @@
             location.href="${ctx}/createPost.jsp"
         }
 
+        function likesPost(){
+            location.href="${ctx}/userLikesPost.do"
+        }
+
+
 
     </script>
 
@@ -60,6 +65,8 @@
     <br>
 
     <button onclick="createPost()">게시물 작성하기</button>
+
+    <button onclick="likesPost()">회원이 좋아요 누른 글 목록</button>
 
 
 </table>

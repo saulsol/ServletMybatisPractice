@@ -184,12 +184,34 @@ public class PostDao {
         return count;
     }
 
+    public int userLikesPostCount (String userId){
+        SqlSession session = sqlSessionFactory.openSession();
+
+        int count = session.selectOne("userLikesPostCount", userId);
+
+        session.commit();
+        session.close();
+
+        return count;
+    }
+
+    public List<PostDto> userLikesPost(String userId, int pageNum){
+        SqlSession session = sqlSessionFactory.openSession();
+        UserLikesPostDto userLikesPostDto = new UserLikesPostDto();
+
+        int initSize = 10;
+        int realPageNum = (pageNum -1) * 10;
+
+        userLikesPostDto.setUserId(userId);
+        userLikesPostDto.setLimit(initSize);
+        userLikesPostDto.setOffset(realPageNum);
 
 
-
-
-
-
+        List<PostDto> list = session.selectList("userLikesPost", userLikesPostDto);
+        session.commit();
+        session.close();
+        return list;
+    }
 
 
     static public PostDao getInstance(){

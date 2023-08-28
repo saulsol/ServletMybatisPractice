@@ -69,5 +69,17 @@
         SELECT COUNT(*) FROM Posts  WHERE (postTitle LIKE CONCAT('%', #{postTitle}, '%')
         OR postContent LIKE CONCAT('%', #{postContent}, '%'))
     </select>
+
+    <select id="userLikesPost" resultType="postDto" parameterType="UserLikesPostDto">
+        SELECT * FROM posts WHERE userId IN
+        (SELECT userId FROM Likes WHERE userId = #{userId})
+        ORDER BY postNum
+        LIMIT #{limit} OFFSET #{offset}
+    </select>
+
+    <select id="userLikesPostCount" resultType="Integer" parameterType="String">
+        SELECT COUNT(*) FROM posts WHERE userId IN
+        (SELECT userId FROM Likes WHERE userId = #{userId})
+    </select>
     
 </mapper>
