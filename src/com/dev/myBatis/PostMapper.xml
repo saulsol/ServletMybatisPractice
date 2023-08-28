@@ -71,15 +71,15 @@
     </select>
 
     <select id="userLikesPost" resultType="postDto" parameterType="UserLikesPostDto">
-        SELECT * FROM posts WHERE userId IN
-        (SELECT userId FROM Likes WHERE userId = #{userId})
+        SELECT * FROM posts WHERE postNum IN
+        (SELECT postNum FROM Likes WHERE userId = #{userId})
         ORDER BY postNum
         LIMIT #{limit} OFFSET #{offset}
     </select>
 
     <select id="userLikesPostCount" resultType="Integer" parameterType="String">
-        SELECT COUNT(*) FROM posts WHERE userId IN
-        (SELECT userId FROM Likes WHERE userId = #{userId})
+        SELECT COUNT(*) FROM posts WHERE postNum IN
+        (SELECT postNum FROM Likes WHERE userId = #{userId})
     </select>
     
 </mapper>
