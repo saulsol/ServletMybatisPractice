@@ -17,7 +17,56 @@
 
 
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5e9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        h3 {
+            color: #2a8b59;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 100%;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ccc;
+        }
+
+        th, td {
+            padding: 8px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #2a8b59;
+            color: white;
+        }
+
+        button {
+            background-color: #2a8b59;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d6340;
+        }
+    </style>
 
 
 </head>

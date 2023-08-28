@@ -26,7 +26,50 @@
 
 
     </script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f5e9;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
 
+        h3 {
+            color: #2a8b59;
+        }
+
+        textarea {
+            width: 100%;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            resize: vertical;
+        }
+
+        button {
+            background-color: #2a8b59;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            margin-top: 10px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1d6340;
+        }
+
+        .alert {
+            color: red;
+            margin-top: 10px;
+        }
+    </style>
 
 </head>
 <body>

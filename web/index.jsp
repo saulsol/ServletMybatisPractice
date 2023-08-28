@@ -16,10 +16,59 @@
         location.href="${ctx}/createPost.jsp"
       }
 
-
-
-
     </script>
+
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        background-color: #f0f5e9;
+        color: #333;
+        margin: 0;
+        padding: 0;
+      }
+
+      h3 {
+        color: #2a8b59;
+      }
+
+      form {
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      }
+
+      input[type="text"],
+      input[type="password"],
+      input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-bottom: 10px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+      }
+
+      input[type="submit"] {
+        background-color: #2a8b59;
+        color: white;
+        border: none;
+        cursor: pointer;
+      }
+
+      button {
+        background-color: #2a8b59;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        margin-top: 10px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      button:hover {
+        background-color: #1d6340;
+      }
+    </style>
 
 
   </head>
